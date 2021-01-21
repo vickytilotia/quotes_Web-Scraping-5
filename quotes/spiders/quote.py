@@ -14,33 +14,7 @@ class QuoteSpiderSelenium(scrapy.Spider):
     allowed_domains = ['quotes.toscrape.com/js']
     start_urls = ['http://quotes.toscrape.com/js']
 
-    """def start_requests(self):
-        #this is for pagination using scrapy_seleinum
-        yield SeleniumRequest{
-            url = "quotes.toscrape.com/js",
-            wait_time = 3,
-            #screenshot = True
-            callback =  self.parse
-        }
-    
-    def parse(self,response):
 
-        for q in response.xpath("//div[@class = 'quote']"):
-
-            yield{
-                'quote' : q.xpath(".//span//text()").get(),
-            }
-        
-        next_page = response.xpath("//li[@class = 'next']/a/@href").get()
-        if next_page:
-            absolute_url = f"quotes.toscrape.com{next_page}"
-            yield SeleniumRequest{
-                url = absolute_url
-                wait_time=3
-                callback = self.parse
-                }
-                """
-        
 
     def __init__(self):
         #inside it we do everything releated to selenium
